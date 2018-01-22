@@ -2,6 +2,7 @@
 
 namespace Larabookir\Gateway;
 
+use Larabookir\Gateway\Asanpardakht\Asanpardakht;
 use Larabookir\Gateway\Parsian\Parsian;
 use Larabookir\Gateway\Sadad\Sadad;
 use Larabookir\Gateway\Mellat\Mellat;
@@ -56,7 +57,7 @@ class GatewayResolver
 	 */
 	public function getSupportedPorts()
 	{
-		return [Enum::MELLAT, Enum::SADAD, Enum::ZARINPAL, Enum::PAYLINE, Enum::JAHANPAY, Enum::PARSIAN, Enum::PASARGAD, Enum::SAMAN];
+		return [Enum::MELLAT, Enum::SADAD, Enum::ZARINPAL, Enum::PAYLINE, Enum::JAHANPAY, Enum::PARSIAN, Enum::PASARGAD, Enum::SAMAN , Enum::ASANPARDAKHT];
 	}
 
 	/**
@@ -140,6 +141,8 @@ class GatewayResolver
 			$name = Enum::JAHANPAY;
 		} elseif ($port InstanceOf Sadad) {
 			$name = Enum::SADAD;
+        } elseif ($port InstanceOf Asanpardakht) {
+            $name = Enum::ASANPARDAKHT;
 		} elseif(in_array(strtoupper($port),$this->getSupportedPorts())){
 			$port=ucfirst(strtolower($port));
 			$name=strtoupper($port);

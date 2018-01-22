@@ -82,6 +82,17 @@ return [
         'certificate-path'    => storage_path('gateway/pasargad/certificate.xml'),
         'callback-url' => '/gateway/callback/pasargad'
     ],
+    //--------------------------------
+    // Asanpardakht gateway
+    //--------------------------------
+    'asanpardakht' => [
+        'merchant_id'    => 'xxxxxxxxxxx',
+        'iv'    => 000000,
+        'key'    => 000000,
+        'username'    => '',
+        'password'    => '',
+        'callback-url' => '/gateway/callback/asanpardakht'
+    ],
     //-------------------------------
     // Tables names
     //--------------------------------
